@@ -6,7 +6,11 @@
  * Help generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).
  */
 
-function parse(input: string) {
+function parse(input: string): string {
+
+    const basicLetterRegex = /^[a-zA-Z]$/
+
+    return input.split(' ').map(function(input){return input[0]}).join('').toUpperCase();
     
 }
 
