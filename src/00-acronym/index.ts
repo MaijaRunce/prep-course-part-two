@@ -7,11 +7,29 @@
  */
 
 function parse(input: string): string {
+  const basicLetterRegex = /^[a-zA-Z]$/;
 
-    const basicLetterRegex = /^[a-zA-Z]$/
+  return input
+    .split(" ")
+    .map((input) => {
+      const jaunsMainigais = input.split("-");
+      let answer = ""
+      for (const mainigais of jaunsMainigais) {
+        if (basicLetterRegex.test(mainigais[0])) {
+           answer += mainigais[0];
+           continue
+        }
 
-    return input.split(' ').map(function(input){return input[0]}).join('').toUpperCase();
-    
+        if (basicLetterRegex.test(mainigais[1])) {
+           answer += mainigais[1];
+           continue
+        }
+      }
+
+      return answer;
+    })
+    .join("")
+    .toUpperCase();
 }
 
 export { parse };
