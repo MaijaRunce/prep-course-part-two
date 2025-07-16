@@ -9,6 +9,7 @@
  * isEven(3) === false
  */
 
-function isEven(n: number) {}
+
+const isEven = (n: number) => (n & 1) === 0 ;
 
 export { isEven };
