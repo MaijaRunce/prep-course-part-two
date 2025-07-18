@@ -13,6 +13,9 @@
  * palindrome("abcdefg") === false
  */
 
-function palindrome(str: string) {}
+const palindrome = (str: string): boolean => {
+    const reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
 
 export { palindrome };
