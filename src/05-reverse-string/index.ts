@@ -10,6 +10,9 @@
  * reverse('Greetings!') === '!sgniteerG'
  */
 
-function reverse(str: string) {}
+const reverse = (str: string): string => {
+    return str.split('')
+              .reduce((reversed, char) => char + reversed, '');
+}
 
 export { reverse };
