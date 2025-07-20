@@ -20,6 +20,6 @@ const reverse = (int: number) => {
     .split("")
     .reduce((reversed, char) => char + reversed, "");
   return isNegative ? Number("-" + result) : Number(result);
-};
+}; 
 
 export { reverse };
