@@ -11,7 +11,23 @@
  * anagrams('RAIL! SAFETY!', 'fairy tales') === true
  * anagrams('Hi there', 'Bye there') === false
  */
+//  .reduce((reversed, char) => char + reversed, "");
 
-function anagrams(stringA: string, stringB: string) {}
+const anagrams = (stringA: string, stringB: string): boolean => {
+  const sortedS = stringA
+    .split("")
+    .filter((n) => n !== "!")
+    .sort()
+    .join("")
+    .toUpperCase();
+  const sortedT = stringB
+    .split("")
+    .filter((n) => n !== "!")
+    .sort()
+    .join("")
+    .toUpperCase();
 
+
+  return sortedS === sortedT;
+};
 export { anagrams };
