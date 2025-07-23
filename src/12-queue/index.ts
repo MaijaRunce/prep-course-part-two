@@ -13,9 +13,14 @@
  */
 
 class Queue {
-  add(n: number) {}
+  private data: number []= [];
+ add(n: number): void {
+    this.data.push(n);
+  }
 
-  remove() {}
+   remove(): number | undefined {
+    return this.data.shift();
+  }
 }
 
 export { Queue };
