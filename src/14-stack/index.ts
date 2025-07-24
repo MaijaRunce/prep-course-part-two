@@ -15,11 +15,23 @@
  */
 
 class Stack {
-  push(n: number) {}
+    private items: number [] = [];
 
-  pop() {}
 
-  peek() {}
-}
+  push(n: number): void {
+    this.items.push(n);
+  }
+  
+
+  pop(): number | string {
+    return this.items.length == 0 ? "Underflow" : this.items.pop()!;
+  }
+
+  peek(): number | string {
+      return this.items.length === 0
+        ? "Stack is empty"
+        : this.items[this.items.length - 1];
+    }
+  }
 
 export { Stack };
