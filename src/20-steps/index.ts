@@ -19,6 +19,16 @@
  *            '####'
  */
 
-function steps(n: number) {}
+const steps = (n: number) => {
+  for (let i: number = 0; i < n; i++) {
+    let row: string = "";
+    for (let j: number = 0; j <= i; j++) {
+      row += "#"
+    }
+
+    const spaces = n - i - 1
+    console.log(row + " ".repeat(spaces < 0 ? 0 : spaces));
+  }
+};
 
 export { steps };
