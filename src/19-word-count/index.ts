@@ -10,7 +10,15 @@
  */
 
 class Words {
-  count(str: string) {}
+
+  count(str: string) {
+    var obj: Record<string, number> = {};
+    str.split(" ").forEach((el) => {
+      const word = el.toLowerCase()
+      obj[word] = obj[word] ? obj[word] += 1 : 1;
+    })
+    return obj;
+  }
 }
 
 export { Words };
