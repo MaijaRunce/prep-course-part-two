@@ -8,17 +8,20 @@
  *  come: 1
  *  free: 1
  */
-
 class Words {
+  count(str: string): Record<string, number> {
+    const obj = Object.create(null);
 
-  count(str: string) {
-    var obj: Record<string, number> = {};
-    str.split(" ").forEach((el) => {
-      const word = el.toLowerCase()
-      obj[word] = obj[word] ? obj[word] += 1 : 1;
-    })
+    str.trim().split(/\s+/).forEach((el) => {
+      const word = el.toLowerCase();
+      obj[word] = obj[word] ? obj[word] + 1 : 1;
+    });
+
     return obj;
   }
 }
 
 export { Words };
+
+
+
