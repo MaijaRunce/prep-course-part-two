@@ -28,11 +28,31 @@
  */
 
 class PhoneNumber {
-  constructor(input: string) {}
+  private phoneNumber: string;
 
-  number() {
-    return "";
+  constructor(input: string) {
+    this.phoneNumber = input;
+  }
+
+  public number(): string | null {
+    const digits = this.phoneNumber.replace(/\D/g, "").toString();
+    const digitsLength = digits.length;
+
+    if (digitsLength < 10 || (digitsLength > 10 && digits[0] !== "1")) {
+      return null;
+    }
+
+    const sanitizedDigits = digits.slice(digitsLength - 10);
+
+    if (Number(sanitizedDigits[0]) < 2) {
+      return null;
+    }
+    if (Number(sanitizedDigits[3]) < 2){
+      return null;
+    }
+
+    return sanitizedDigits;
   }
 }
 
-export { PhoneNumber };
+export { PhoneNumber }; 
